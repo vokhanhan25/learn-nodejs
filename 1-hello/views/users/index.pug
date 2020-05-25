@@ -1,4 +1,5 @@
 h1 Users
+a(href="/users/create") New
 
 form(action="/users/search", method="GET") 
     input(type="text", name="q")
@@ -6,4 +7,7 @@ form(action="/users/search", method="GET")
 
 ul  
     each user in users 
-        li= user.name
+        li 
+            span= user.name
+            span &nbsp;
+            a(href='/users/' + user.id) View
